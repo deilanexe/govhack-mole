@@ -1,0 +1,38 @@
+<html ng-app="myModule">
+  <head>
+    <meta charset="utf-8">
+    <title>Regions and suburbs</title>
+    <script src="script/lib/angular.min.js"></script>
+    <script src="script/lib/jquery.min.js"></script>
+    <script src="script/lib/bootstrap.min.js"></script>
+    <script src="script/app.js"></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/lib/bootstrap.min.css" />
+  </head>
+<body ng-controller="myController">
+  <h1>hello!</h1>
+  {{regionInformation}}
+
+  <p>
+    First language spoken: {{regionInformation['data']['Diversity']['Top language spoken']}}
+  </p>
+  <p>
+    Second language spoken: {{regionInformation['data']['Diversity']['2nd top language spoken']}}
+  </p>
+  <p>
+    Third language spoken: {{regionInformation['data']['Diversity']['3rd top language spoken']}}
+  </p>
+  <p>
+    Fourth language spoken: {{regionInformation['data']['Diversity']['4th top language spoken']}}
+  </p>
+  <p>
+    Fifth language spoken: {{regionInformation['data']['Diversity']['5th top language spoken']}}
+  </p>
+  <p>
+    Services:
+    <li ng-repeat="(service,count) in regionInformation['data']['Services']">
+      {{service}}: {{count}}
+    </li>
+  </p>
+</body>
+</html>
